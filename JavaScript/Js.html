@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 1.Ders</title>
+</head>
+<body>
+    
+    <p id="result"></p>
+    <input type="button" value="chance css" onclick="Call();">
+    <p id="result2"></p>
+    <button type="button" onclick="B();">Alert Mesaj</button>
+    <button type="button" onclick="A();">Console.log Mesaj</button>
+    <button type="button" onclick="C();">Alert ve Console.log Mesaj</button>
+
+    <script>
+
+        function Call(){
+            alert("beni hangi fonksiyon çağırdı?");
+            document.getElementById('result').innerHTML="javascript ne kadar canlı"
+            document.getElementById('result2').innerHTML="javascript kolay bir dildir"
+        } 
+
+        function B () {
+            alert ("merhaba dünya");
+        }
+
+        function A () {
+            console.log ("merhaba dünya")
+        }
+
+        function C () {
+            B();
+            A();
+        }
+    </script>
+
+</body>
+</html>

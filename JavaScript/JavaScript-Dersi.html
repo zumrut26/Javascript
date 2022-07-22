@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Videoda JavaScript</title>
+
+    <style>
+        .header {
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 18px;
+            background: red;
+        }
+
+        .container {
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>1 Videoda JavaScript</h1>
+    </div>
+
+    <hr>
+
+    <div class="container">
+
+        <!--<p id="para1">Paragraf 1 </p>-->
+        <!--<button onclick="renkDegistir()">Tıkla</button>-->
+        <!--<button onmouseover="mouseover()" onmouseout="mouseout()">Tıkla</button>-->
+
+        <form name="form1" action="gonder.php" method="POST" onsubmit="return dogrula()">
+            <input type="text" name="isim" />
+
+            <button type="submit">Gönder</button>
+        </form>
+
+    </div>
+
+    <script>
+
+        /*..........................
+        var a;
+        
+        a = 10;
+
+        var b = a * 2 + 10;
+        
+        alert("b'nin değeri:" + b);
+        */
+
+
+
+        /*..........................
+        var array = ["Java", "Phayton", "C++", "C"]
+        alert(array[0]);
+        alert(array[1]);
+        alert(array[2]);
+        alert(array[3]);
+        alert(array[4]);   //bu satır arrayin öyle bir indexi olmadığını ve hata vereceğini göstermek için verilmiştir.
+
+                       //oluşturulan bir arraye eleman eklemenin iki yolu var. biri;
+
+        array[4] = "Php";
+        alert(array);
+
+        //ikincisi;
+
+        array.push("Go");
+        alert(array);
+
+                       //arrayin içerisindeki eleman sayısı nasıl bulunur?
+
+        alert(array.length);
+        */
+
+
+
+        /*..........................
+        //for döngüsü
+        for (var i = 0; i < 10; i++) {
+            console.log("i değeri" + i);
+
+        }
+
+        //while döngüsü
+        var i = 0;
+
+        while (i < 100){
+            console.log("i değeri: " + i);
+
+            i += 2;
+        }
+        */
+
+
+
+        /*..........................
+        //arraylerin elemanlarını yazdırma işlemi
+        var sayilar = [32, 5, 1, 100, -1, 90];
+        alert(sayilar.length);//bu şekilde sadece arraylerin toplam sayısı (6) yazılıyor. içerideki her bir indexi tek tek ekrana yazdırmak için;
+
+        console.log("Array Elemanları...");
+
+        for (var i = 0; i < sayilar.length; i++) {
+            console.log("Eleman:" + sayilar[i]);
+
+        }
+        */
+
+
+
+        /*..........................
+        //koşul durumları
+        var a = 5;
+        var b = 6;
+
+        if (a != b) {
+            console.log("Eşit değildir.");
+        }
+
+        //ayrıca and ve or operatörleri vardır. bunlar; && ve || olarak verilir. farkları ise and operatöründe belirtilen bütün durumların eşit olması or operatöründe yalnızca bir tane bile durumun eşit olması true değerini verir.
+        */
+
+
+
+        /*..........................
+        //if else yapıları 
+        var a = 10;
+        var b = 20;
+        if (a == b) {
+            console.log("Eşit");
+        }
+        else {
+            console.log("Eşit değil.")
+        }
+
+        //eğer bir değişken birden çok koşula bağlıysa if else , else if yapıları kullanılır;
+        var islem = 4;
+        if (islem == 1) {
+            console.log("İşlem 1");
+        }
+        else if (islem == 2) {
+            console.log("İşlem 2");
+        }
+        else if (islem == 3) {
+            console.log("İşlem 3");
+        }
+        else {
+            console.log("Geçersiz işlem");
+        }
+        */
+
+
+
+        /*..........................
+        switch (islem) { //işlem şeklinde bir değişken tanımlandı ve bu işlem değişkeninin değerinin 1,2,3 olma durumuna göre switch case yapıları kullanılır.
+            case 1:
+                console.log("İşlem 1");
+                break;//switch - caseden çıkmak için kullanılır.    
+            case 2:
+                console.log("İşlem 2");
+                break;
+            case 3:
+                console.log("İşlem 3");
+                break;
+            default://başka işlem olmadığı durumuna göre verilir.
+                console.log("Geçersiz işlem...");
+        }*/
+
+
+
+        /*..........................
+        //fonksiyon tanımlama
+        function selamla(isim) {
+            console.log("Merhaba" + isim);
+        }
+
+        selamla("Zümrüt");
+
+        function toplama(a, b, c) {
+            return a + b + c; //return fonksiyonun çağrıldığı yere içerden bir değer dönmesini sağlar.
+        }
+
+        function cikarma(x, y) {
+            return x - y;
+        }
+
+        console.log(cikarma(10, 15));
+        console.log(-5);
+
+        var toplam = toplama(3, 4, 5);
+        var toplam = 3 + 4 + 5;
+        */
+
+
+
+        //obje oluşturma yöntemi
+        /*var calisan = {
+            isim: "Sümeyye",
+            soyisim: "Zümrüt",
+            numara: 1234,
+            diller: ["Php", "Java", "C++"],
+            /*adres: {//obje tipinde olması için süslü parantez açılır.
+                cadde: "Kabil",
+                sokak: "1254.sokak"
+            }*//*
+isimBilgileri: function () {//obje içinde fonksiyon oluşturmak için
+return "İsim: " + this.isim + " Soyisim: " + this.soyisim;
+}
+};
+ 
+console.log(calisan.isim);
+console.log(calisan.numara);
+console.log(calisan.diller);
+console.log(calisan.adres.cadde);
+console.log(calisan.adres.sokak);
+console.log(calisan.isimBilgileri());*/
+        /*
+                function Calisan(isim, soyisim, numara) {
+                    this.isim = isim;
+                    this.soyisim = soyisim;
+                    this.numara = numara;
+                    this.bilgileriGoster = function () {
+                        return "isim: " + this.isim + "\nSoyisim : " + this.soyisim + "\nNumara : " + this.numara;
+                    }
+                }
+                var calisan1 = new Calisan("Sümeyye", "Zümrüt", 123456);
+                var calisan2 = new Calisan("Mehmet", "Gençol", 456789);//bu fonksiyon gibi istenilen kadar obje oluşturulabilir.
+                console.log(calisan1.bilgileriGoster());
+                console.log(calisan2.bilgileriGoster());
+        */
+
+
+
+        //event
+        /*function tikla() {
+            alert("Butona Tıklandı...")
+        }*/
+
+        //butona tıklandığı zaman butonun içeriğini değiştirmek için innerHTML kullanılır.
+        //<button onclick="this.innerHTML = 'Butona Tıklandı'">Tıkla</button>
+
+        /*function tikla(element) {
+            element.innerHTML = "Butona Tıklandı...";//bu şekilde üzerinde tıkla yazan butona tıklandığında değişerek üzerinde butona tıklandı yazacak.
+        }*/
+
+
+
+        /*function renkDegistir() {
+            var element = document.getElementById("para1"); //seçilen elementi atamak için bir tane element yani değişken oluşturuldu. idsi para1 olan seçildi
+            element.style.color = "red";//elementin style içerisindeki colorı değiştirmek için kullanılmıştır.
+        }
+        
+        function mouseover() {
+            var element = document.getElementById("para1");
+            element.innerHTML = "Mouse Over Effecti";
+        }
+        function mouseout() {
+            var element = document.getElementById("para1");
+            element.innerHTML = "Mouse Out Effecti";
+        }
+  */
+        
+        /*
+        function dogrula() {
+            var form = document.forms["form1"];//html dökümanındakı forma erişmek için formun name özelliği kullanılmıştır. var form şeklinde bir değişken oluşturulup document.forms ile sayfadaki bütün formlara ulaşılır ancak sadece birini seçmek için köşeli parantez içine istenilen name yazılır.
+            var deger = form["isim"].value;//inputtaki ismi almak için form değişkeni üzerinden alınmıştır. input alanının içini de almak için.value kullanılmıştır.
+
+            //eğer bu değer boşsa 
+            if (deger == "") {
+                alert("İsim alanı boş bırakılamaz...");
+                return false;
+                
+            }
+            return true;
+        }
+        */
+        
+
+
+
+
+    </script>
+
+</body>
+
+</html>
